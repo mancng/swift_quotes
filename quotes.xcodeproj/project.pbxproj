@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		40741467E488DEED07113E13 /* Pods_quotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4730ECFBF5AABD6802E909E /* Pods_quotesUITests.framework */; };
 		700D11FCB9F3A0D757C5BF97 /* Pods_quotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EBB72660DB3E017F7F8A116 /* Pods_quotesTests.framework */; };
+		A856868B2022FB7900D6B27D /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A856868A2022FB7900D6B27D /* FavoritesTableViewCell.swift */; };
 		A89D3EAD202127A600520C11 /* QuotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D3EAC202127A600520C11 /* QuotesTableViewController.swift */; };
 		A89D3EAF202127B500520C11 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D3EAE202127B500520C11 /* FavoritesTableViewController.swift */; };
 		A89D3EB1202127C800520C11 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D3EB0202127C800520C11 /* AddViewController.swift */; };
@@ -52,6 +53,7 @@
 		5FFFAF94667189EB0C48F84D /* Pods_quotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89365497DFB3E4D6BD0A668D /* Pods-quotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-quotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-quotesUITests/Pods-quotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A4730ECFBF5AABD6802E909E /* Pods_quotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A856868A2022FB7900D6B27D /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		A89D3EAC202127A600520C11 /* QuotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesTableViewController.swift; sourceTree = "<group>"; };
 		A89D3EAE202127B500520C11 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		A89D3EB0202127C800520C11 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				A8E5316C2021807700E3D01F /* DataServices.swift */,
 				A8E5316E2021955300E3D01F /* QuotesTableViewCell.swift */,
 				A8A9533A20224CCD0070CFD8 /* FavoriteButton.swift */,
+				A856868A2022FB7900D6B27D /* FavoritesTableViewCell.swift */,
 			);
 			path = quotes;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 				A8E5316D2021807700E3D01F /* DataServices.swift in Sources */,
 				A8A9533B20224CCD0070CFD8 /* FavoriteButton.swift in Sources */,
 				A8D771B820211D4B00825092 /* LogInViewController.swift in Sources */,
+				A856868B2022FB7900D6B27D /* FavoritesTableViewCell.swift in Sources */,
 				A89D3EB1202127C800520C11 /* AddViewController.swift in Sources */,
 				A89D3EAD202127A600520C11 /* QuotesTableViewController.swift in Sources */,
 				A89D3EAF202127B500520C11 /* FavoritesTableViewController.swift in Sources */,

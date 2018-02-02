@@ -8,9 +8,9 @@
 
 import Foundation
 
-class User {
-    var userName: String!
-    var userEmail: String!
+struct User {
+    static var userName = ""
+    static var userEmail = ""
 }
 
 struct Quote {
@@ -19,4 +19,5 @@ struct Quote {
     var posterName: String!
     var posterEmail: String!
     var updatedAt: Int!
+    var idKey: String!
 }

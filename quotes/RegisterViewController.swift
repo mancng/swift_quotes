@@ -11,8 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class RegisterViewController: UIViewController, QuoteTableViewControllerDelegate {
-    
-    let currUser = User()
+
     var userEmail: String = ""
     var userPassword: String = ""
     var userName: String = ""
@@ -23,15 +22,10 @@ class RegisterViewController: UIViewController, QuoteTableViewControllerDelegate
     @IBOutlet var passwordTxtField: UITextField!
     @IBAction func registerBtnPressed(_ sender: UIButton) {
         
-
         userName = nameTxtField.text!
         userEmail = emailTxtField.text!
         formattedEmail = encodeEmail(email: emailTxtField.text!)
         userPassword = passwordTxtField.text!
-        
-        currUser.userName = userName
-        currUser.userEmail = userEmail
-    
         
         if userEmail != "" && userPassword != "" {
             Auth.auth().createUser(withEmail: userEmail, password: userPassword) { (user, error) in
@@ -42,7 +36,10 @@ class RegisterViewController: UIViewController, QuoteTableViewControllerDelegate
                     let userToAdd: [String:Any] = ["userName": self.userName, "userEmail": self.userEmail]
                     userRef.setValue(userToAdd)
                     print("user created in database!")
-                    self.performSegue(withIdentifier: "quotesSegue", sender: self.currUser)
+                    User.userName = self.userName
+                    User.userEmail = self.formattedEmail
+                    
+                    self.performSegue(withIdentifier: "quotesSegue", sender: self)
                 } else {
                     print("Error from registration: \(String(describing: error))")
                 }
@@ -51,7 +48,6 @@ class RegisterViewController: UIViewController, QuoteTableViewControllerDelegate
             print("NOTHING entered")
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,14 +65,8 @@ class RegisterViewController: UIViewController, QuoteTableViewControllerDelegate
             let nav = tabBarController.viewControllers![0] as! UINavigationController
             let quotesTableViewController = nav.topViewController as! QuotesTableViewController
             quotesTableViewController.delegate = self
-            if let theUser = sender as? User {
-                quotesTableViewController.getUser = sender as? User
-            }
         }
-
     }
-    
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailTxtField.resignFirstResponder()

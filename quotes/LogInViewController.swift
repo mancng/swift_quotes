@@ -12,7 +12,7 @@ import FirebaseDatabase
 
 class LogInViewController: UIViewController, QuoteTableViewControllerDelegate {
 
-    let currUer = User()
+//    let currUer = User()
     var userPassword: String = ""
     var loggedUserEmail: String = ""
     var formattedEmail: String = ""
@@ -37,13 +37,10 @@ class LogInViewController: UIViewController, QuoteTableViewControllerDelegate {
                         if let theName = value?["userName"] as? String {
                             self.username = theName
                         }
-//                        let username = value?["userName"] as? String
-                        print(self.username)
-                        print(self.formattedEmail)
-
-                        self.currUer.userEmail = self.formattedEmail
-                        self.currUer.userName = self.username
-                        self.performSegue(withIdentifier: "quotesSegue", sender: self.currUer)
+                        
+                        User.userName = self.username
+                        User.userEmail = self.formattedEmail
+                        self.performSegue(withIdentifier: "quotesSegue", sender: self)
                     }) { (error) in
                         print(error.localizedDescription)
                     }
@@ -71,10 +68,6 @@ class LogInViewController: UIViewController, QuoteTableViewControllerDelegate {
             let nav = tabBarController.viewControllers![0] as! UINavigationController
             let quotesTableViewController = nav.topViewController as! QuotesTableViewController
             quotesTableViewController.delegate = self
-            if let theUser = sender as? User {
-                quotesTableViewController.getUser = sender as? User
-                print("I'm SENDING the USER: \(currUer.userName)")
-            }
         } else {
             print("NOT USING QUOTE segue")
         }
